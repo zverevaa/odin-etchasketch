@@ -6,6 +6,12 @@ const trash = document.querySelector(".erase-all");
 
 let isEraser = false;
 
+let drawingCells = "";
+
+let gridSize = 16;
+buildGrid(gridSize);
+drawingCells = document.querySelectorAll(".draw");
+
 gridSizeButton.addEventListener("click", getGridSize);
 
 function getGridSize() {
@@ -13,26 +19,26 @@ function getGridSize() {
     if (!(gridSize > 0 && gridSize < 101)) {
         gridSize = prompt("Please try again");
     }
-    container.style.display = "grid";
     if (container.firstChild != undefined) {
         removeCells();
     }
     buildGrid(gridSize);
-    const drawingCells = document.querySelectorAll(".draw");
+    drawingCells = document.querySelectorAll(".draw");
     reset(drawingCells);
-    dragPaintCells(drawingCells);
-    pencil.addEventListener("click", () => {
-        isEraser = false;
-        dragPaintCells(drawingCells);
-    });
-    eraser.addEventListener("click", () => {
-        isEraser = true;
-        erasePaint(drawingCells);
-    });
-    trash.addEventListener("click", () => {
-        eraseAll(drawingCells);
-    });
 }
+
+dragPaintCells(drawingCells);
+pencil.addEventListener("click", () => {
+    isEraser = false;
+    dragPaintCells(drawingCells);
+});
+eraser.addEventListener("click", () => {
+    isEraser = true;
+    erasePaint(drawingCells);
+});
+trash.addEventListener("click", () => {
+    eraseAll(drawingCells);
+});
 // let gridSize = 11;
 
 function buildGrid(gridSize) {

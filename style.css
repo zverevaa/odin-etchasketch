@@ -23,7 +23,7 @@ element {
 }
 
 button {
-    padding: 10px 25px;
+    padding: 10px 73px;
     border: 10px solid darkslateblue;
     border-radius: .5em;
     font-size: 28px;
@@ -36,7 +36,6 @@ button {
     height: 960px;
     display: grid;
     margin-bottom: 10px;
-    display: none;
 }
 
 .draw {
