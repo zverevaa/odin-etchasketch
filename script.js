@@ -27,3 +27,21 @@ drawingCells.forEach((cell) => {
         cell.classList.add("painted");
     });
 });
+
+let MDOWN = false;
+
+["mousedown", "mouseup"].forEach((e) => {
+    drawingCells.forEach((cell) => {
+        cell.addEventListener(e, () => (MDOWN = !MDOWN));
+    });
+});
+
+function paintCells() {
+    if (MDOWN) {
+        this.classList.add("painted");
+    }
+}
+
+drawingCells.forEach((cell) => {
+    cell.addEventListener("mouseenter", paintCells);
+});
