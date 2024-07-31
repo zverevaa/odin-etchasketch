@@ -1,0 +1,36 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+element {
+    --grid-size: 4;
+}
+
+.container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.draw-container {
+    width: 960px;
+    height: 960px;
+    display: grid;
+    gap: 1px;
+}
+
+.draw {
+    display: inline-block;
+    background-color: darkslateblue;
+}
+
+.draw:hover {
+    background-color: aquamarine;
+}
+
+.painted {
+    background-color: aquamarine;
+}
